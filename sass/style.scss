@@ -15,7 +15,7 @@ body{
 
 h1{
 	color: white;
-	font-size: 8em;
+	font-size: 8em; 
 	font-family: $bebas;
    font-weight: 300;
 }
@@ -175,7 +175,6 @@ ______________________*/
 /* Portfolio Section
 ______________________*/
 
-@import "portfolio/*.png";
 
 #portfolio{
 	background: $mainbg;
@@ -207,40 +206,13 @@ ______________________*/
 .smallbox{
 		width: 400px;
 		height: 200px;
-		margin:0.4em;
 		display: inline-block;
+		background: darken($mainbg, 20%);
 }
-
-.li1{
-	background: #403B32;
+.portImg{
+	width:100%;
+	height: 100%;
 }
-.li2{
-	@include portfolio-sprite(port1);
-	background-size: cover;
-}
-.li3{
-	@include portfolio-sprite(port2);
-	background-size: cover;
-}
-
-.li4{
-	background: #E5D3B4;
-}
-.li5{
-	background: #7F7564;
-}
-.li6{
-	@include portfolio-sprite(port3);
-	background-size: cover;
-}
-.li7{
-	@include portfolio-sprite(port4);
-	background-size: cover;
-}
-.li8{
-	background: #BFB096;
-}
-
 
 
 /* Ipad & Mobile
@@ -267,32 +239,6 @@ ______________________*/
 	}
 	.smallbox{
 		margin:1em;
-
-	}
-	.li1{
-		margin-bottom:0;
-	}
-	.li2{
-		margin-top:0;
-	}
-	.li3{
-		margin-bottom:0;
-	}
-	.li4{
-		margin-top:0;
-	}
-	.li5{
-		margin-bottom:0;
-	}
-	.li6{
-		margin-top:0;
-	}
-	.li7{
-		margin-bottom:0;
-	}
-	.li8{
-		margin-top:0;
-	}
 }
 @media only screen and (max-width: 785px) {
 	.timeline{
@@ -375,7 +321,6 @@ ______________________*/
 	}
 
 	/*Portfolio*/
-	@import "mportfolio/*.png";
 
 	#portfolio {
 		min-height: 1300px;
@@ -391,29 +336,7 @@ ______________________*/
 		p{
 			font-size: 1em;
 			height:125px;
-
 		}
 	}
-
-	.li2{
-		@include mportfolio-sprite(mport1);
-	}
-	.li3{
-		@include mportfolio-sprite(mport2);
-	}
-	.li6{
-		@include mportfolio-sprite(mport3);
-	}
-	.li7{
-		@include mportfolio-sprite(mport4);
-	}
-
-
 }
-
-
-
-
-
-
-
+}
