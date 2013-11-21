@@ -1,0 +1,163 @@
+
+.timeline{
+	height: 500px;
+	width: 750px;				//Div container*/
+	margin: -75px auto;
+	
+	time{
+		width: 100%;		//Center Time element*/
+		cursor: help;
+		font-weight: 100; 
+		text-transform: uppercase; 
+		letter-spacing: .2em; 
+		font-size: 2em; 
+		color: $mainbg;
+	}
+	.timetop, .timebottom{
+		width:100%;					// top and bottom container*/
+		height: 250px;
+	}
+}
+
+.timemobile{
+	display:none;
+}
+
+.timeround{
+	height: 100px;					//Round box for text*/
+	width: 200px;
+	margin: 10px auto 20px;
+	border: white 2px solid;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	position: relative;
+	@include transition(all 0.5s ease-in-out);
+
+	 p {
+		width: 200px;
+		height: 90px;					// Paragraph in the round box*/
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		color: white;
+		line-height: 20px;
+		font-weight: 100;
+   		letter-spacing: .1em; 
+		font-size: 1.2em;
+		padding: 4px;
+	}
+}
+.timecircle{
+		width:10px;
+		height:10px;
+		border: 2px solid darken($mainbg, 20%);			//small circle*/
+	    @include border-radius(100%);
+		margin: 0 auto;
+		cursor: help;
+}
+
+
+//Active Box
+//_________________________*/
+.timeactive{
+	color:darken($mainbg, 20%);					//Styling time element w active*/
+	@include transition(all 0.5s ease-in-out);
+
+}
+
+.circleactive{
+	background: darken($mainbg, 20%);	
+	@include transition(all 0.5s ease-in-out);
+
+}
+
+//Top Part
+//_________________________*/
+
+
+
+.timetop{
+	border-bottom: darken($mainbg, 20%) 2px solid;			//Line*/
+	
+	time{
+		margin-top:-5px;
+		margin-bottom: 3px;
+	}
+	.timecircle:after{
+		@include line(31px);
+		margin: 10px 0 0 0;
+	}
+	.timeround:after{
+		@include arrow(down, 8px, white);
+		left:45%;
+		top: 100%;
+	}
+	ul{
+		float:right;
+	
+		li{
+			margin-top: 3em;				//pos for each Li tag in timetop*/
+			display:inline-block;
+		}
+	}
+}
+
+
+
+//Bottom part
+//_______________________*/
+
+.timebottom{
+		position: relative;
+
+		ul{
+			float: left;			//pos for ul i bottom*/
+			margin-left: 20px;
+
+			li{
+				display:inline-block;			//li bottom pos*/								
+			}
+		}
+		
+		.timecircle{
+			margin-top: 2em;
+
+		}
+
+		.timecircle:before{
+			@include line(26px);
+			top: 0;
+		}
+		.timeround:before{
+			@include arrow(up, 7px, white);
+			left: 45%;
+			top: -15%;
+		}
+
+}
+
+.arrow{
+	width:0;
+	height:0;
+	border:15px solid;
+	border-color:rgba(0, 0 ,0, 0);
+	border-left-color: darken($mainbg, 20%);
+	    @include border-radius(3px);
+	z-index: 20;
+	position: absolute;
+	margin: -17px 0 0 750px;
+	}
+
+@media only screen and (max-width: 785px) {
+	.timeline{
+		width: 100%;
+		height: 400px;
+	}
+	.timemobile {
+		display:block;
+	}
+	.arrow{
+		display: none;
+	}
+}
+

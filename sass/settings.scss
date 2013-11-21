@@ -1,0 +1,45 @@
+ /* Fonts
+ __________________________*/
+
+@font-face{
+font-family: ultralight;
+src: url('../fonts/helvetica_neue_ultralight.ttf');
+}
+
+@font-face{
+font-family: bebas;
+src: url('../fonts/bebas.otf');
+}
+
+ // Variable
+// __________________________*/
+
+$mainbg: #d2d0bf;
+
+$light: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+$ultralight: "ultralight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+$bebas: "bebas", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+
+ // Mixin
+// __________________________*/
+@mixin arrow($direction, $size, $color: black){
+	content:"";
+	position: absolute;
+	border: $size solid;
+	border-color:rgba(0, 0 ,0, 0);    
+	@if $direction == up{
+		border-bottom-color: $color;
+	}@else if $direction == down{
+		border-top-color: $color;
+	}
+}
+
+@mixin line($size) {
+		content:"";
+		border:solid 1px darken($mainbg, 20%);				// Line between line and year*/
+		position: absolute;
+		height:$size;
+}

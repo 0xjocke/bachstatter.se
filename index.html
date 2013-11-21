@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Frontend Developer</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            if (!window.jQuery) {
+                document.write('<script src="js/jquery.js"><\/script>');
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Arrows-->
+        <div class="arrowcon">
+            <div id="up" class="up key"></div>
+            <div id="down" class="down key"></div>
+        </div>
+        <!-- Contact -->
+        <div class="contactpic"></div>
+        <section id="contact">
+            <div class="cwrapper">
+                <div class="cardwrapper">
+                    <article>
+                                <ul class="social">
+                                    <li>
+                                        <a href="http://se.linkedin.com/pub/joachim-bachstätter/51/183/724/" target="_blank">
+                                        <img class="socialicon" alt="linkedin icon" src="images/contact/linkedin.png"></a>
+                                    </li>
+                                    <li>
+                                        <a href="google.com/+JoachimBachstätter" target="_blank" >
+                                        <img class="socialicon" src="images/contact/google.png" alt="google icon"></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://codecademy.com/bachis"  target="_blank">
+                                        <img class="socialicon" src="images/contact/codecademy.png" alt="codecademy icon"></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.codeschool.com/users/bachis" target="_blank"><img class="socialicon" src="images/contact/code.png" alt="codeschool icon"></a>
+                                    </li>
+                            </ul>
+                            <ul class="cvinfo">
+                                <li>
+                                    <img class="icon" alt="mail icon" src="images/contact/mail.png"> 
+                                    <a href="mailto:joachim.bachstatter@gmail.com">joachim.bachstatter@gmail.com</a>
+                                </li>
+                                <li>
+                                 <img class="icon" alt="phone icon" src="images/contact/phone.png"> 070 - 813 50 00
+                                </li>
+                                <li>
+                                    <img class="icon" alt="cv icon" src="images/contact/cv.png">
+                                    <a href="cv/cv.pdf" download="cv/cv.pdf" target="_blank">CV</a></li>
+                                <li>
+                            </ul>  
+                    </article>
+                    <aside>
+                        <div class="me"></div>
+                    </aside>
+                </div>
+                <div class="emailcon">
+                  <div id="form-div">
+                    <form method="post" action="mail.php" class="form" id="form1">
+                      
+                      <p class="name">
+                        <input name="name" type="text" class="feedback-input" placeholder="Name" id="name" required />
+                      </p>
+                      
+                      <p class="email">
+                        <input name="email" type="email" class="feedback-input" id="email" placeholder="Email" required/>
+                      </p>
+                      
+                      <p class="text">
+                        <textarea name="text" class="feedback-input" id="comment" placeholder="What's on your mind?" required></textarea>
+                      </p>
+                      
+                      
+                      <div class="submit">
+                        <input name="submit" type="submit" value="SEND" id="button-blue"/>
+                        <div class="ease"></div>
+                      </div>
+                    </form>
+               
+                  </div>
+            </div> <!--End cwrapper-->
+        </section>
+    <!-- Nav -->
+        <nav class="menu">
+                <ul class="navigation">
+                    <li id="homelink" class="thispage">
+                        <a href="#">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li id="aboutlink">
+                        <a href="#">
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li id="portfoliolink">
+                        <a href="#">
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li id="contactlink">
+                        <a>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    <!-- Home Section -->
+            <section id="home">
+                <header class="intro">
+                    <h1>Joachim Bachstätter</h1>
+                     <h2>- Frontend Developer</h2>
+
+                    <div class="white">
+                            <img src="images/logos.png">
+                    </div>
+                </header>
+            </section>
+    <!-- About Section -->
+            <section id="about">
+                <div class="sectionwrapper">
+                    <header>
+                        <h1>Timeline</h1>
+                    </header>
+                    <div class="timeline">
+                        <div class="timemobile">
+                            <ul>
+                                <li><time>2008:</time><p> Student från Procivitas.</p></li>
+                                <li><time>2009:</time> <p>Pingis på heltid.</p></li>
+                                <li><time>2010:</time> <p>Pingisproffs i Elitserien.</p></li>
+                                <li><time>2011:</time> <p>Nationalekonomi 30hp. <br> Kombinerat med pingis.</p></li>
+                                <li><time>2012:</time> <p>Lansering thisstyle.se.<br> SM-Guld. <br> Redovisning 10hp.</p></li>
+                                <li><time>2013:</time> <p>Konsultuppdrag.<br> Webbdesign 15hp.<br> Nätapp 400yh.</p> </li>
+                            </ul>
+                        </div>
+                        <div class="timetop">
+                            <ul>
+                                <li>
+                                    <article class="timeround">
+                                        <p> Pingis på heltid.</p>
+                                    </article>
+                                    <time>2009</time>
+                                    <div class="timecircle"></div>
+                                </li>
+                                <li>
+                                    <article class="timeround">
+                                    <p> Nationalekonomi 30hp <br>
+                                        Kombinerat med Pingis
+                                    </p>
+                                    </article>
+                                    <time>2011</time>
+                                    <div class="timecircle"></div>
+                                </li>
+                                <li>
+                                    <article class="timeround" style="opacity: 1">
+                                    <p> 
+                                    Konsultuppdrag. <br>
+                                    Webbdesign 15hp.
+                                    Nätapp 400yh.    <br></p>
+                                    </article>
+                                    <time class="timeactive">2013</time>
+                                    <div class="timecircle circleactive"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="arrow"></div>
+                        <div class="timebottom">
+                            <ul>
+                                <li>
+                                    <div class="timecircle"></div>
+                                    <time>2008</time>
+                                    <article class="timeround">
+                                        <p> Student från Procivitas</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <div class="timecircle"></div>
+                                    <time>2010</time>
+                                    <article class="timeround">
+                                    <p> Pingisproffs i Elitserien</p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <div class="timecircle"></div>
+                                    <time>2012</time>
+                                    <article class="timeround">
+                                    <p>Lansering thisstyle.se.
+                                    SM Guld pingis.
+                                     Redovisning 10hp.</p>
+                                    </article>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    <!-- Portfolio Section -->
+            <section id="portfolio">
+                    <header class="sectionwrapper">
+                        <h1>Portfolio</h1>
+                    </header>
+                    <div class="portwrapper">
+                        <ul>
+                            <li class="li1 smallbox">
+                                <p>Thisstyles kommande sida. Byggd med wordpress och Woocommerce.</p></li>
+                                <li class="li2 smallbox"></li>
+                            <li class="li3 smallbox"></li>
+                            <li class="li4 smallbox">
+                                <p>En intern sida för Växjö Taxis nyhetsblad byggd med HTML, CSS och JavaScript</p>
+                            </li>
+                            <li class="li5 smallbox">
+                                <p>Thisstyle.ses officiella hemsida byggd med Tictail.</p>
+                            </li>
+                            <li class="li6 smallbox"></li>
+                            <li class="li7 smallbox"></li>
+                            <li class="li8 smallbox">
+                                <p>X2 Technology:s kommande sida byggd med Wordpress.</p>
+                            </li>
+                        </ul>
+                </div>
+            </section>
+<!-- Script -->
+        <script src="js/script.js"></script>
+    </body>
+</html>

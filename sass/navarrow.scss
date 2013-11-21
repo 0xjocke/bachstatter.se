@@ -1,0 +1,50 @@
+// Arrows 
+//______________________*/
+
+.arrowcon{
+	position: fixed;
+	bottom: 100px;
+	width:120px;
+	height:100px;
+	z-index: 20;
+}
+.key{
+	cursor: pointer;
+	width:35px;
+	height:35px;
+	background-size: cover;
+	position: absolute;
+	opacity: 0.5;
+	background:rgba(255,255,255,0.5);
+	@include transition(transform 0.5s ease-in-out);
+
+}
+.up{
+	left: 35%;
+	top: 10%;
+	border: 1px solid black;
+	@include border-radius(100%);
+	
+	&:after{
+		@include arrow(up, 10px);
+		left:8px;
+	}
+	&:hover{
+		@include scale(1.2);
+	}
+}
+.down{
+	border: 1px solid black;
+	 @include border-radius(100%);
+	left:35%;
+	top: 50px;
+	
+	&:after{
+		@include arrow(down, 10px);
+		left:8px;
+		bottom:1px;
+	}
+	&:hover{
+		@include scale(1.2);
+	}
+}
