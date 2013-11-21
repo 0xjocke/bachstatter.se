@@ -2,17 +2,6 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8403",
   "files" : {
-    "\/images\/homeLogos\/html5.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/homeLogos\/html5.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/homeLogos\/html5.png",
-      "initialSize" : 5400,
-      "fileType" : 8192
-    },
     "\/images\/settings.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -22,6 +11,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/settings.png",
       "initialSize" : 7664,
+      "fileType" : 8192
+    },
+    "\/images\/homeLogos\/html5.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/homeLogos\/html5.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/homeLogos\/html5.png",
+      "initialSize" : 5400,
       "fileType" : 8192
     },
     "\/images\/homeLogos\/css3.png" : {
@@ -68,15 +68,15 @@
       "initialSize" : 128975,
       "fileType" : 8192
     },
-    "\/images\/contact\/codecademy.png" : {
+    "\/images\/portfolio\/port3.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/contact\/codecademy.png",
+      "inputAbbreviatedPath" : "\/images\/portfolio\/port3.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/contact\/codecademy.png",
-      "initialSize" : 1505,
+      "outputAbbreviatedPath" : "\/images\/portfolio\/port3.png",
+      "initialSize" : 86599,
       "fileType" : 8192
     },
     "\/images\/contact\/linkedin.png" : {
@@ -99,26 +99,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/images\/portfolio\/port3.png" : {
+    "\/images\/contact\/codecademy.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/portfolio\/port3.png",
+      "inputAbbreviatedPath" : "\/images\/contact\/codecademy.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/portfolio\/port3.png",
-      "initialSize" : 86599,
-      "fileType" : 8192
-    },
-    "\/images\/contact\/code.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/contact\/code.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/contact\/code.png",
-      "initialSize" : 12051,
+      "outputAbbreviatedPath" : "\/images\/contact\/codecademy.png",
+      "initialSize" : 1505,
       "fileType" : 8192
     },
     "\/images\/contact\/cv.png" : {
@@ -130,6 +119,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/contact\/cv.png",
       "initialSize" : 65838,
+      "fileType" : 8192
+    },
+    "\/images\/contact\/code.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/contact\/code.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/contact\/code.png",
+      "initialSize" : 12051,
       "fileType" : 8192
     },
     "\/css\/reset.css" : {
@@ -203,17 +203,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/images\/portfolio\/port4.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/portfolio\/port4.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/portfolio\/port4.png",
-      "initialSize" : 48675,
-      "fileType" : 8192
-    },
     "\/sass\/style.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -225,6 +214,17 @@
       "outputAbbreviatedPath" : "\/css\/style.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/images\/portfolio\/port4.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/portfolio\/port4.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/portfolio\/port4.png",
+      "initialSize" : 48675,
+      "fileType" : 8192
     },
     "\/php\/index.php" : {
       "ignoreWasSetByUser" : 0,
@@ -246,18 +246,6 @@
       "initialSize" : 24638,
       "fileType" : 8192
     },
-    "\/sass\/navarrow.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/navarrow.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/navarrow.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/settings.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -267,6 +255,18 @@
       "outputStyle" : 0,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/settings.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/navarrow.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/navarrow.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/navarrow.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -325,18 +325,6 @@
       "initialSize" : 7046,
       "fileType" : 8192
     },
-    "\/sass\/timeline.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/timeline.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/timeline.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/contactform.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -349,14 +337,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/php\/func.php" : {
+    "\/sass\/timeline.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/php\/func.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/timeline.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/timeline.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/images\/mportfolio\/mport3.png" : {
       "ignoreWasSetByUser" : 0,
@@ -369,6 +360,15 @@
       "initialSize" : 40758,
       "fileType" : 8192
     },
+    "\/php\/func.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/php\/func.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/js\/script.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -380,17 +380,6 @@
       "outputAbbreviatedPath" : "\/js\/script-ck.js",
       "fileType" : 64
     },
-    "\/images\/settings1.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/settings1.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/settings1.png",
-      "initialSize" : 6636,
-      "fileType" : 8192
-    },
     "\/images\/mportfolio\/mport2.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -400,6 +389,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/mportfolio\/mport2.png",
       "initialSize" : 38893,
+      "fileType" : 8192
+    },
+    "\/images\/settings1.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/settings1.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/settings1.png",
+      "initialSize" : 6636,
       "fileType" : 8192
     },
     "\/images\/homeLogos\/sass.png" : {
