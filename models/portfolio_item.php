@@ -26,8 +26,22 @@
 	    	return self::$url;
 	    }
 
-
-	    /* I need to put in some more for admin page*/
+	    // return a link to an edit page
+	    public function adminEditUrl() {
+    		return '/admin/portfolio/edit.php?id=' . $this->id;
+  		}
+  		public function save() {
+		    // Förbereder mysql kommando
+		    $statement = self::$dbh->prepare(
+		      "UPDATE ".self::TABLE_NAME." SET title=:title,
+		                                       content=:content
+		                                       WHERE id=:id");
+		    // Exekverar mysql kommando
+		    $statement->execute(array('id' => $this->id,
+		                              'title' => $this->title,
+		                              'content' => $this->content
+		                             ));
+  }
 
 	}// class end
 

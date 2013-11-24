@@ -14,24 +14,24 @@ $portfolioItems = PortfolioItem::all();
     <div class="container">
       
 
-    <?php foreach ($portfolioItems as $index => $item): ?>
+    <?php foreach ($portfolioItems as $index => $item):?>
         <?php if ($index % 2): ?>
             <div class="smallbox portLeft">
                 <h2><?php echo $item->title; ?></h2>
                 <p><?php echo $item->content; ?></p>
-                <a href="<?php echo $item->url() ?>">Läs mer</a>
+                <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
             </div>
             <div class="smallbox">
-                <img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="">
+                <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="<?php echo $item->title; ?>"></a>
             </div>
         <?php else: ?>
         <div class="smallbox portLeft">
-            <img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="">
+            <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="<?php echo $item->title; ?>"></a>
         </div>
         <div class="smallbox">
             <h2><?php echo $item->title; ?></h2>
             <p><?php echo $item->content; ?></p>
-            <a href="<?php echo $item->url() ?>">Läs mer</a>
+            <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
         </div>
         <?php endif ?>
        

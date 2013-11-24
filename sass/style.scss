@@ -13,6 +13,7 @@ body{
 	width: 100%;
 	font-family: $light;
    font-weight: 100;
+   background: $mainbg;
 }
 
 h1{
@@ -31,6 +32,12 @@ a{
 	width:100%;
 	text-align: center;
 }
+
+.back{
+	font-size: 2em;
+	margin-top:0.5em;
+}
+
 
 @import "nav.scss";
 @import "navarrow.scss";
@@ -198,15 +205,15 @@ ______________________*/
 		background: darken($mainbg, 20%)
 	}
 	h2{
-		margin: 0.5em;
+		margin: 0.75em 0.75em 0.75em 0.75em ;
 		font-size: 2em;
 
 	}
 	p{
-		margin: 1em 0 0.5em 1em;
+		margin: 0em 0 0.5em 1em;
 		font-size: 1.5em;
 	}
-	a{
+	.readmore{
 		font-size: 1.5em;
 		margin-left: 1em;
 
@@ -222,6 +229,46 @@ ______________________*/
 	&:hover{
 		@include scale(1.5);
 	}
+}
+
+
+
+/* Portfolio Item
+______________________*/
+
+
+.itembox{
+	margin: 1em 0;
+	h1{
+		color: invert($mainbg);
+	}
+	p{
+		font-size: 2em;
+		margin: 1em 0;
+	}
+}
+
+
+/* Edit page
+______________________*/
+
+.invert{
+	color: invert($mainbg);
+}
+table{
+	border: 1px solid;
+}
+
+
+td, th{
+	font-size: 2em;
+	border: 1px solid;
+	padding: 1em;
+}
+
+.editform{
+	font-size: 2em;
+	margin: 2em 0;
 }
 
 
