@@ -19,7 +19,7 @@ $portfolioItems = PortfolioItem::all();
             <div class="smallbox portLeft">
                 <h2><?php echo $item->title; ?></h2>
                 <p><?php echo $item->content; ?></p>
-                <a href="">Läs mer</a>
+                <a href="<?php echo $item->url() ?>">Läs mer</a>
             </div>
             <div class="smallbox">
                 <img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="">
@@ -31,7 +31,7 @@ $portfolioItems = PortfolioItem::all();
         <div class="smallbox">
             <h2><?php echo $item->title; ?></h2>
             <p><?php echo $item->content; ?></p>
-            <a href="">Läs mer</a>
+            <a href="<?php echo $item->url() ?>">Läs mer</a>
         </div>
         <?php endif ?>
        

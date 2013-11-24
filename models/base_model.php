@@ -26,7 +26,7 @@ class BaseModel
     return $statement->fetchAll(PDO::FETCH_CLASS, $class);
   }
 
-/*
+
   public static function find($id) {
     // Sätter $class till namn på classen metoden kallas ifrån
     $class = get_called_class();
@@ -39,7 +39,6 @@ class BaseModel
 
     return $statement->fetch(PDO::FETCH_CLASS);
   }
-  */
 }
 
 ?>
