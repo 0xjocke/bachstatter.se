@@ -1,0 +1,29 @@
+@import "susy";
+   
+
+   $total-columns: 12;
+   $column-width: 5em;
+   $gutter-width: 1em;
+   $grid-padding: $gutter-width;
+   $border-box-sizing: true;
+
+.container{
+   		@include container;
+
+
+}
+
+.smallbox{
+	margin-top: 1em;
+	height: 200px;
+	@include span-columns(5, 12);
+}
+
+.portLeft{
+	@include pre(1, 12);
+}
+portRight{
+
+}
+
+

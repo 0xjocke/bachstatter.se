@@ -8,6 +8,30 @@ __________________________*/
   font-family: bebas;
   src: url("../fonts/bebas.otf"); }
 
+.container {
+  *zoom: 1;
+  max-width: 73em;
+  _width: 73em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto; }
+  .container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.smallbox {
+  margin-top: 1em;
+  height: 200px;
+  width: 40.84507%;
+  float: left;
+  margin-right: 1.40845%;
+  display: inline; }
+
+.portLeft {
+  margin-left: 8.4507%; }
+
 /* Global
 ______________________*/
 html {
@@ -24,6 +48,12 @@ h1 {
   font-size: 8em;
   font-family: "bebas", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300; }
+
+h2 {
+  font-family: "bebas", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+a {
+  text-decoration: none; }
 
 .sectionwrapper {
   width: 100%;
@@ -641,29 +671,31 @@ ______________________*/
   #portfolio h1 {
     padding: 1em 0 0.3em 0;
     color: #2d2f40; }
-
-.portwrapper {
-  width: 900px;
-  margin: 0 auto; }
-  .portwrapper ul {
-    list-style: none; }
-  .portwrapper p {
-    padding: 0.5em;
-    color: black;
-    font-size: 2em;
-    height: 180px;
-    display: table-cell;
-    vertical-align: middle; }
-
-.smallbox {
-  width: 400px;
-  height: 200px;
-  display: inline-block;
-  background: #a8a483; }
+  #portfolio .smallbox {
+    background: #a8a483; }
+  #portfolio h2 {
+    margin: 0.5em;
+    font-size: 2em; }
+  #portfolio p {
+    margin: 1em 0 0.5em 1em;
+    font-size: 1.5em; }
+  #portfolio a {
+    font-size: 1.5em;
+    margin-left: 1em; }
 
 .portImg {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
+  .portImg:hover {
+    -webkit-transform: scale(1.5, 1.5);
+    -moz-transform: scale(1.5, 1.5);
+    -ms-transform: scale(1.5, 1.5);
+    -o-transform: scale(1.5, 1.5);
+    transform: scale(1.5, 1.5); }
 
 /* Ipad & Mobile
 ______________________*/
@@ -684,10 +716,7 @@ ______________________*/
 
   /*Portfolio*/
   #portfolio {
-    min-height: 2000px; }
-
-  .smallbox {
-    margin: 1em; } }
+    min-height: 2000px; } }
 @media only screen and (max-width: 850px) and (max-width: 785px) {
   .timeline {
     width: 100%; }
@@ -749,18 +778,4 @@ ______________________*/
 
   /*About*/
   #about .sectionwrapper {
-    padding-top: 50px; }
-
-  /*Portfolio*/
-  #portfolio {
-    min-height: 1300px; }
-    #portfolio ul {
-      text-align: center;
-      width: 300px; }
-
-  .smallbox {
-    width: 250px;
-    height: 125px; }
-    .smallbox p {
-      font-size: 1em;
-      height: 125px; } }
+    padding-top: 50px; } }
