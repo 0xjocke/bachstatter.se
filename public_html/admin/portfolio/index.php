@@ -15,12 +15,14 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Portfolio items</h1>
+			<a class="back" href="/admin/portfolio/add.php">Add new item</a> <br> <br>
 			<table>
 			  <thead>
 			    <tr>
 			      <th>Id</th>
 			      <th>Title</th>
 			      <th>Edit</th>
+			      <th>Remove</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -30,6 +32,9 @@
 			        <td><?php echo $item->title; ?></td>
 			        <td>
 			          <a href="<?php echo $item->adminEditUrl(); ?>">Edit</a>
+			        </td>
+			        <td>
+			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
 			        </td>
 			      </tr>
 			    <?php endforeach; ?>

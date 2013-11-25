@@ -699,12 +699,6 @@ ______________________*/
   -moz-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s; }
-  .portImg:hover {
-    -webkit-transform: scale(1.5, 1.5);
-    -moz-transform: scale(1.5, 1.5);
-    -ms-transform: scale(1.5, 1.5);
-    -o-transform: scale(1.5, 1.5);
-    transform: scale(1.5, 1.5); }
 
 /* Portfolio Item
 ______________________*/

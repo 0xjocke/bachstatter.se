@@ -21,7 +21,7 @@ $item = PortfolioItem::find($_GET['id']);
 				<p><?php echo $item->content; ?></p>
 			</div>
 			<div class="itembox">
-				<img src="../images/portfolio/<?php echo $item->id; ?>.png" alt="">
+				<img src="../images/<?php echo $item->imageName; ?>" alt="">
 			</div>
 			<a class="back" href="/">Tillbaka</a>
 		</div>

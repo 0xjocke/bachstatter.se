@@ -22,11 +22,11 @@ $portfolioItems = PortfolioItem::all();
                 <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
             </div>
             <div class="smallbox">
-                <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="<?php echo $item->title; ?>"></a>
+                <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/<?php echo $item->imageName; ?>" alt="<?php echo $item->title; ?>"></a>
             </div>
         <?php else: ?>
         <div class="smallbox portLeft">
-            <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/portfolio/<?php echo $item->id; ?>.png" alt="<?php echo $item->title; ?>"></a>
+            <a href="<?php echo $item->url() ?>"><img class="portImg" src="../images/<?php echo $item->imageName ?>" alt="<?php echo $item->title; ?>"></a>
         </div>
         <div class="smallbox">
             <h2><?php echo $item->title; ?></h2>
