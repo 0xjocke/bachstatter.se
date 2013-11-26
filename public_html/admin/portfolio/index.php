@@ -1,45 +1,51 @@
-<?php 
-	require_once '../../../application.php';
-	$portfolioItems = PortfolioItem::all();
- ?>
- <!doctype html>
+<?php
+$username = "admin";
+$password = "jocke";
+$nonsense = "supercalifragilistohoihohpialidocious";
+
+if (isset($_COOKIE['PrivatePageLogin'])) {
+   if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
+      require 'startpage.php';
+      exit;
+   } else {
+      echo "Bad Cookie.";
+      exit;
+   }
+}
+
+if (isset($_GET['p']) && $_GET['p'] == "login") {
+   if ($_POST['user'] != $username) {
+      echo "Sorry, that username does not match.";
+      exit;
+   } else if ($_POST['keypass'] != $password) {
+      echo "Sorry, that password does not match.";
+      exit;
+   } else if ($_POST['user'] == $username && $_POST['keypass'] == $password) {
+      setcookie('PrivatePageLogin', md5($_POST['keypass'].$nonsense));
+      header("Location: $_SERVER[PHP_SELF]");
+   } else {
+      echo "Sorry, you could not be logged in at this time.";
+   }
+}
+?>
+
+<!doctype html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
-	<body>
-		<div class="container">
-			<h1 class="invert">Portfolio items</h1>
-			<a class="back" href="/admin/portfolio/add.php">Add new item</a> <br> <br>
-			<table>
-			  <thead>
-			    <tr>
-			      <th>Id</th>
-			      <th>Title</th>
-			      <th>Edit</th>
-			      <th>Remove</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <?php foreach($portfolioItems as $item): ?>
-			      <tr>
-			        <td><?php echo $item->id; ?></td>
-			        <td><?php echo $item->title; ?></td>
-			        <td>
-			          <a href="<?php echo $item->adminEditUrl(); ?>">Edit</a>
-			        </td>
-			        <td>
-			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
-			        </td>
-			      </tr>
-			    <?php endforeach; ?>
-			  </tbody>
-			</table>
-		</div>
-	</body>
+   <body>
+      <div class="container">
+         <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" method="post" class="form">
+            <h1 class="invert">Login</h1>
+            <input placeholder="Username" type="text" name="user" id="user" class="feedback-input"><br>
+            <input placeholder="Password" type="password" name="keypass" id="keypass" class="feedback-input"><br>
+            <input type="submit" id="submit" value="Login" />
+         </form>
+      </div>
+   </body>
 </html>
