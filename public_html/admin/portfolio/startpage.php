@@ -1,5 +1,8 @@
 <?php 
 	require_once '../../../application.php';
+	if (isset($_COOKIE['PrivatePageLogin'])) {
+		   if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)){
+
 	$portfolioItems = PortfolioItem::all();
  ?>
  <!doctype html>
@@ -43,3 +46,11 @@
 		<br>
 	</body>
 </html>
+
+<?php 
+		}else {
+			header("Location: /admin/portfolio/");
+		}
+	} // cookie issset
+
+ ?>

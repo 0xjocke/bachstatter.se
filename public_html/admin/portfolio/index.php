@@ -1,7 +1,6 @@
 <?php
-$username = "admin";
-$password = "jocke";
-$nonsense = "supercalifragilistohoihohpialidocious";
+  require_once '../../../application.php';
+
 
 if (isset($_COOKIE['PrivatePageLogin'])) {
    if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
