@@ -17,7 +17,6 @@
         <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
 	<body>

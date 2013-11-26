@@ -15,7 +15,6 @@
         <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/style.css">
     </head>
 	<body>
@@ -28,7 +27,7 @@
 			    <input type="text" id="title" name="item[title]" value=""> <br><br>
 
 				<label for="content">Content</label>
-				<textarea id="content" name="item[content]"></textarea>
+				<textarea id="content" name="item[content]"></textarea> <br><br>
 
 			  	<label for="file">Choose you image (388px*200px)</label><br>
 				<input type="file" name="file" id="file" size="40"><br>

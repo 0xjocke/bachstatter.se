@@ -1,4 +1,4 @@
-@import "compass";
+@import "compass/reset";
 @import "settings.scss";
 @import "_layout.scss";
 
@@ -27,6 +27,7 @@ h2{
 }
 a{
 	text-decoration: none;
+	color: lighten(invert($mainbg), 35%);
 }
 .sectionwrapper{
 	width:100%;
@@ -237,6 +238,7 @@ ______________________*/
 	margin: 1em 0;
 	h1{
 		color: invert($mainbg);
+		font-size: 4em;
 	}
 	p{
 		font-size: 2em;
@@ -250,6 +252,10 @@ ______________________*/
 
 .invert{
 	color: invert($mainbg);
+	font-size: 4em;
+	margin: 0.5em 0;
+
+
 }
 table{
 	border: 1px solid;
@@ -264,7 +270,7 @@ td, th{
 
 .editform{
 	font-size: 2em;
-	margin: 2em 0;
+	margin: 0.75em 0;
 }
 
 
