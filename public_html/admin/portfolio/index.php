@@ -3,7 +3,7 @@
 
 
 if (isset($_COOKIE['PrivatePageLogin'])) {
-   if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)) {
+   if ($_COOKIE['PrivatePageLogin'] == hash("SHA256", $password.$nonsense)) {
       require 'startpage.php';
       exit;
    } else {
@@ -20,7 +20,7 @@ if (isset($_GET['p']) && $_GET['p'] == "login") {
       echo "Sorry, that password does not match.";
       exit;
    } else if ($_POST['user'] == $username && $_POST['keypass'] == $password) {
-      setcookie('PrivatePageLogin', md5($_POST['keypass'].$nonsense));
+      setcookie('PrivatePageLogin', hash("SHA256", $password.$nonsense));
       header("Location: $_SERVER[PHP_SELF]");
    } else {
       echo "Sorry, you could not be logged in at this time.";

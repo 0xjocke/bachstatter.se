@@ -1,7 +1,7 @@
 <?php 
 	require_once '../../../application.php';
 	if (isset($_COOKIE['PrivatePageLogin'])) {
-		if ($_COOKIE['PrivatePageLogin'] == md5($password.$nonsense)){
+		if ($_COOKIE['PrivatePageLogin'] == hash("SHA256", $password.$nonsense)){
 
 
 	if(isset($_POST['item'])) {
@@ -44,5 +44,7 @@
 	}else {
 		header("Location: /admin/portfolio/");
 	}
- }else // cookie issset
+ }else{
+ 	header("Location: /admin/portfolio/");
+ } // cookie issset
 ?>
