@@ -18,6 +18,4 @@ define('DB_PASS', 'dbpwd');
 $username = "user";
 $password = "pwd";
 $nonsense = "supercalifragilistohoihohpialidocious";
-
-
  ?>
