@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require_once 'config.php';
 
 // Skapar anslutning med PDO
@@ -13,6 +14,7 @@ $dbh = new PDO(
 require_once ROOT_PATH . '/models/base_model.php';
 require_once ROOT_PATH . '/models/portfolio_item.php';
 require_once ROOT_PATH . '/models/categories.php';
+require_once ROOT_PATH . '/models/authorization.php';
 
 
 BaseModel::setDbh($dbh);
