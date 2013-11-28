@@ -13,6 +13,13 @@
 	      		$this->$key = $value;
 		    }
 	    }
+
+	    public function attributes(array $attributes = null){
+	    	if ($attributes === null) return;
+	    	foreach ($attributes as $key => $value) {
+	      		$this->$key = $value;
+		    }
+	    }
 	    // variable for url for all port items
 	    private static $url = '/porfolio_items';
 	
@@ -34,13 +41,13 @@
   		public function adminRemoveUrl(){
     		return '/admin/portfolio/remove.php?id=' . $this->id;
   		}
-  
+
 
   		public function save() {
 		    // Förbereder mysql kommando
 		    $statement = self::$dbh->prepare(
 		      "UPDATE ".self::TABLE_NAME." SET title=:title,
-		                                       content=:content
+		                                       content=:content,
 		                                       WHERE id=:id");
 		    // Exekverar mysql kommando
 		    $statement->execute(array('id' => $this->id,
@@ -57,53 +64,44 @@
   		}
 
   		public function add(){
-  			 $imageName = $_FILES["file"]["name"];
   			 $statement = self::$dbh->prepare(
-		      "INSERT INTO ".self::TABLE_NAME." (title, content, imageName) VALUES (:title, :content, :imageName)");
+		      "INSERT INTO ".self::TABLE_NAME." (title, content) VALUES (:title, :content)");
 		      // Exekverar mysql kommando
-		    	$statement->execute(array('title' => $this->title, 'content' => $this->content, 'imageName' => $imageName));
+		    	$statement->execute(array('title' => $this->title, 'content' => $this->content));
+
+		    	$this->id = self::$dbh->lastInsertId();
   		}
 
+
+  		// lägg till in array
+
   		public function addImage(){
+  			$errorMessage = [];
   			$allowedExts = array("gif", "jpeg", "jpg", "png");
+  			$allowedTypes = array("image/gif","image/jpeg", "image/jpg","image/pjpeg","image/x-png","image/png" );
 			$temp = explode(".", $_FILES["file"]["name"]);
 			$extension = end($temp);
-			if ((($_FILES["file"]["type"] == "image/gif")
-			|| ($_FILES["file"]["type"] == "image/jpeg")
-			|| ($_FILES["file"]["type"] == "image/jpg")
-			|| ($_FILES["file"]["type"] == "image/pjpeg")
-			|| ($_FILES["file"]["type"] == "image/x-png")
-			|| ($_FILES["file"]["type"] == "image/png"))
-			&& ($_FILES["file"]["size"] < 2000000)
-			&& in_array($extension, $allowedExts))
-			  {
-			  if ($_FILES["file"]["error"] > 0)
-			    {
-			      echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
-			    }
-			  else
-			    {
-			    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-			    echo "Type: " . $_FILES["file"]["type"] . "<br>";
-			    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-			    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
-			    if (file_exists("../../images/" . $_FILES["file"]["name"]))
-			      {
-			      echo $_FILES["file"]["name"] . " already exists. ";
-			      }
-			    else
-			      {
-			      move_uploaded_file($_FILES["file"]["tmp_name"],
-			      "../../images/" . $_FILES["file"]["name"]);
-			      echo "Stored in: " . "../../images/" . $_FILES["file"]["name"];
-			      }
-			    }
-			  }
-			else
-			  {
-			  echo "Invalid file";
-			  }
+			if (($_FILES["file"]["size"] > 1)
+			&& ($_FILES["file"]["size"] < 2000000)
+			&& in_array($extension, $allowedExts)
+			&& in_array($_FILES['file']['type'], $allowedTypes)){
+				if ($_FILES["file"]["error"] > 0){
+					$errorMessage[] = "Return Code: " . $_FILES["file"]["error"];
+				    }
+				    else{
+						if(move_uploaded_file($_FILES["file"]["tmp_name"],
+						"../../images/" . $_FILES["file"]["name"])){
+
+							$this->imageName= $_FILES['file']['name'];
+							$statement = self::$dbh->prepare("UPDATE ".self::TABLE_NAME." SET imageName=:imageName WHERE id = :id");
+							$statement->execute(array('imageName'=> $this->imageName, 'id'=> $this->id));
+						}
+				    }
+				}else{
+					$errorMessage[] = "Invalid file";
+			  	}
+			  return $errorMessage;
   		}	//end add image
 	}// class end
 
