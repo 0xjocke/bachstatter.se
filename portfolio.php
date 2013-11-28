@@ -4,11 +4,6 @@ require_once 'application.php';
 
 $portfolioItems = PortfolioItem::all(); 
 $categories = categories::all();
-$selectOption = $_POST['chosenCat'];
-
-if (isset($selectOption)) {
-    echo "hej";
-}
 
 ?>
 
