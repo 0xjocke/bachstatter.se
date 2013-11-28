@@ -1,12 +1,15 @@
 <?php 
 	require_once '../../../application.php';
-		if (isset($_COOKIE['PrivatePageLogin'])) {
-		   if ($_COOKIE['PrivatePageLogin'] == hash("SHA256", $password.$nonsense)){
-
+	Authorization::checkOrRedirect();
+	$errorMessages = [];
 	if(isset($_POST['item'])) {
 	  	$item = new PortfolioItem($_POST['item']);
-	  	$item->add();	  
-	  	$item->addImage();
+	  	$item->add();	 
+	  	$errorMessages = $item->addImage();
+	  	if (!count($errorMessages) > 0 ) {
+	  		header('Location: /admin/portfolio/');
+  			exit;
+	 	}
 	}
 ?>
 
@@ -22,8 +25,9 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Add new Portfolioitem</h1>
+			<a href="/admin/portfolio/" class="back">Tillbaka</a>
+			<?php echo join($errorMessages, "<br>") ?>
 			<form class="editform" action="" method="POST" enctype="multipart/form-data">
-			  	<input type="hidden" name="item[id]" value="">
 
 			    <label for="title">Title</label><br>
 			    <input type="text" id="title" name="item[title]" value=""> <br><br>
@@ -35,15 +39,6 @@
 				<input type="file" name="file" id="file" size="40"><br>
 				<input type="submit" name="submit" value="Submit">
 		  	</form>
-		  	<a href="/admin/portfolio/" class="back">Tillbaka</a>
 		</div>
 	</body>
 </html>
-<?php 
-	}else {
-		header("Location: /admin/portfolio/");
-	}
- }else{
- 		header("Location: /admin/portfolio/");
- } // cookie issset
-?>
