@@ -1,7 +1,6 @@
 <?php 
 	require_once '../../../application.php';
-	if (isset($_COOKIE['PrivatePageLogin'])) {
-		if ($_COOKIE['PrivatePageLogin'] == hash("SHA256", $password.$nonsense)){
+	Authorization::checkOrRedirect();
 
 	if(isset($_POST['item'])) {
 	  	$item = new PortfolioItem($_POST['item']);
@@ -24,21 +23,13 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Remove <?php echo $item->title; ?></h1>
+			<a href="/admin/portfolio/" class="back">Tillbaka</a>
 			<form class="editform" action="" method="POST">
 			  	<input type="hidden" name="item[id]" value="<?php echo $item->id; ?>">
 				
 				<label>Är du säker du vill ta bort <strong><?php echo $item->title; ?> </strong>?</label><br>
 			  	<input type="submit" name="submit" value="Ta bort" class="btn">
 		  	</form>
-		  	<a href="/admin/portfolio/" class="back">Tillbaka</a>
 		</div>
 	</body>
 </html>
-<?php 
-		}else {
-			header("Location: /admin/portfolio/");
-		}
-	}else{
-		header("Location: /admin/portfolio/");
-	} // cookie issset
- ?>
