@@ -4,9 +4,8 @@ class Authorization extends BaseModel
 {
 
   public static function authenticate($userName, $password) {
-    $salt = "speogjpsgj23534";
-    $password = hash("sha256", $password.$salt);
     $user = User::findUser($userName);
+    $password = hash("sha256", $password.$user['userName']);
     if ($userName == $user['userName'] && $password == $user['pwd']) {
         $_SESSION['is_authenticated'] = true;
     }
