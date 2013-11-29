@@ -79,12 +79,8 @@
 .timetop{
 	border-bottom: darken($mainbg, 20%) 2px solid;			//Line*/
 	
-	time{
-		margin-top:-5px;
-		margin-bottom: 3px;
-	}
 	.timecircle:after{
-		@include line(31px);
+		@include line(22px);
 		margin: 10px 0 0 0;
 	}
 	.timeround:after{
@@ -125,7 +121,7 @@
 		}
 
 		.timecircle:before{
-			@include line(26px);
+			@include line(30px);
 			top: 0;
 		}
 		.timeround:before{
