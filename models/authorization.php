@@ -1,21 +1,15 @@
 <?php
 
-class Authorization
+class Authorization extends BaseModel
 {
 
-  public static function authenticate($username, $password) {
-    // Om man skulle vilja koppla till databas
-    // ex:
-    //
-    // $user = User::findByEmail($username);
-    // if ($user && $password == $user->password) {
-    //   $_SESSION['is_authenticated'] = true;
-    // }
-
-    if ($username == ADMIN_EMAIL && $password == ADMIN_PASS) {
-      $_SESSION['is_authenticated'] = true;
+  public static function authenticate($userName, $password) {
+    $salt = "speogjpsgj23534";
+    $password = hash("sha256", $password.$salt);
+    $user = User::findUser($userName);
+    if ($userName == $user['userName'] && $password == $user['pwd']) {
+        $_SESSION['is_authenticated'] = true;
     }
-
     return self::check();
   }
 
