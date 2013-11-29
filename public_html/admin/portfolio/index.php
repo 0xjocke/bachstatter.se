@@ -15,7 +15,7 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Portfolio items</h1>
-			<a class="back" href="/admin/logout.php">Logout</a> <br>
+			<a class="back" href="/admin/logout.php">Logout</a> <br> <br>
 			<a class="back" href="/admin/portfolio/add.php">Add new item</a> <br> <br>
 			<table>
 			  <thead>
