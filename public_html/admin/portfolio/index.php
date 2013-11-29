@@ -24,6 +24,7 @@
 			      <th>Title</th>
 			      <th>Edit</th>
 			      <th>Remove</th>
+			      <th>Category</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -37,8 +38,28 @@
 			        <td>
 			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
 			        </td>
+			        <td>
+			        <?php
+			        $categoryId = $item->categoryId;
+			        	switch ($categoryId) {
+			        	case '1':
+			        		echo "Wordpress";
+			        		break;
+			        	case '2':
+			        		echo "Html5 & CSS3";
+			        		break;
+		        		case '3':
+		        		echo "Tictail";
+		        		break;
+			        	
+			        	default:
+			        		"All";
+			        		break;
+			        	}
+			      ?>
+			      </td>
 			      </tr>
-			    <?php endforeach; ?>
+			    <?php endforeach;?>
 			  </tbody>
 			</table>
 		</div>
