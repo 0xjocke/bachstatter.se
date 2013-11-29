@@ -297,6 +297,9 @@ ______________________*/
 	#portfolio{
 		min-height: 2000px;
 	}
+	#about{
+		height: 700px;
+	}
 
 @media only screen and (max-width: 785px) {
 	.timeline{
@@ -345,7 +348,7 @@ ______________________*/
 @media only screen and (max-width: 600px) {
 	/*Global*/
 	h1 {
-		font-size:5em;
+		font-size:4em;
 	}
 	/*timeline*/
 	.timemobile{
