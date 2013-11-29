@@ -440,7 +440,7 @@ textarea {
   list-style: none;
   color: #c4c0e2;
   margin: 100px 0 0 15px;
-  font-size: 2.3em;
+  font-size: 1.9em;
   float: left; }
   .cvinfo li {
     text-align: left;
@@ -642,14 +642,11 @@ ______________________*/
 
 .timetop {
   border-bottom: #a8a483 2px solid; }
-  .timetop time {
-    margin-top: -5px;
-    margin-bottom: 3px; }
   .timetop .timecircle:after {
     content: "";
     border: solid 1px #a8a483;
     position: absolute;
-    height: 31px;
+    height: 22px;
     margin: 10px 0 0 0; }
   .timetop .timeround:after {
     content: "";
@@ -678,7 +675,7 @@ ______________________*/
     content: "";
     border: solid 1px #a8a483;
     position: absolute;
-    height: 26px;
+    height: 30px;
     top: 0; }
   .timebottom .timeround:before {
     content: "";
@@ -790,7 +787,10 @@ ______________________*/
 
   /*Portfolio*/
   #portfolio {
-    min-height: 2000px; } }
+    min-height: 2000px; }
+
+  #about {
+    height: 700px; } }
 @media only screen and (max-width: 850px) and (max-width: 785px) {
   .timeline {
     width: 100%; }
@@ -828,7 +828,7 @@ ______________________*/
 @media only screen and (max-width: 850px) and (max-width: 600px) {
   /*Global*/
   h1 {
-    font-size: 5em; }
+    font-size: 4em; }
 
   /*timeline*/
   .timemobile {
