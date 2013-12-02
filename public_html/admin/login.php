@@ -11,7 +11,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
   if (!Authorization::authenticate($_POST['login'], $_POST['password'])) {
     $errorMessage = "Fel användarnamn eller lösenord!";
   } else {
-    header('Location: /admin/portfolio/index.php');
+    header('Location: /admin/');
     exit;
   }
 } else if (isset($_POST['submit'])){

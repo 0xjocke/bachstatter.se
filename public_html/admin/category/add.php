@@ -1,16 +1,16 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
+	$errorMessages = [];
+	if(isset($_POST['category'])) {
+	  	$category = new Category($_POST['category']);
+	  	$category->add();	 
+	  	header('Location: /admin/category/');
+	  	exit;
 
-	if(isset($_POST['id'])) {
-	  	$item = PortfolioItem::find($_POST['id']);
-	  	$item->remove();
-	  	header("Location: /admin/portfolio/");
-    	exit;
-	} else {
-	  $item = PortfolioItem::find($_GET['id']);
 	}
- ?>
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -22,13 +22,15 @@
     </head>
 	<body>
 		<div class="container">
-			<h1 class="invert">Remove <?php echo $item->title; ?></h1>
-			<a href="/admin/portfolio/" class="back">Tillbaka</a>
+			<h1 class="invert">New Category</h1>
+			<a href="/admin/category/" class="back">Back</a>
+
 			<form class="editform" action="" method="POST">
-			  	<input type="hidden" name="id" value="<?php echo $item->id; ?>">
-				
-				<label>Är du säker du vill ta bort <strong><?php echo $item->title; ?> </strong>?</label><br>
-			  	<input type="submit" name="submit" value="Ta bort" class="btn">
+
+			    <label for="name">Name</label><br>
+			    <input type="text" id="name" name="category[name]" value=""> <br><br>
+
+				<input type="submit" name="submit" value="Submit">
 		  	</form>
 		</div>
 	</body>

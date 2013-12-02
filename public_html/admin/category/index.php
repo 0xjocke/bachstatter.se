@@ -1,7 +1,7 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
-	$portfolioItems = PortfolioItem::all();
+	$categories = Category::all();
  ?>
  <!doctype html>
 <html>
@@ -14,51 +14,30 @@
     </head>
 	<body>
 		<div class="container">
-			<h1 class="invert">Portfolio items</h1>
+			<h1 class="invert">Categories</h1>
 			<a class="back" href="/admin/">Back | </a>
 			<a class="back" href="/admin/logout.php">Logout</a> <br> <br>
-			<a class="back" href="/admin/portfolio/add.php">Add new item</a> <br> <br>
+			<a class="back" href="/admin/category/add.php">Add new category</a> <br> <br>
 			<table>
 			  <thead>
 			    <tr>
 			      <th>Id</th>
-			      <th>Title</th>
+			      <th>Namn</th>
 			      <th>Edit</th>
 			      <th>Remove</th>
-			      <th>Category</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <?php foreach($portfolioItems as $item): ?>
+			    <?php foreach($categories as $category): ?>
 			      <tr>
-			        <td><?php echo $item->id; ?></td>
-			        <td><?php echo $item->title; ?></td>
+			        <td><?php echo $category->id; ?></td>
+			        <td><?php echo $category->name; ?></td>
 			        <td>
-			          <a href="<?php echo $item->adminEditUrl(); ?>">Edit</a>
+			          <a href="<?php echo $category->adminEditUrl(); ?>">Edit</a>
 			        </td>
 			        <td>
-			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
+			        	<a href="<?php echo $category->adminRemoveUrl(); ?>">Remove</a>
 			        </td>
-			        <td>
-			        <?php
-			        $categoryId = $item->categoryId;
-			        	switch ($categoryId) {
-			        	case '1':
-			        		echo "Wordpress";
-			        		break;
-			        	case '2':
-			        		echo "Html5 & CSS3";
-			        		break;
-		        		case '3':
-		        		echo "Tictail";
-		        		break;
-			        	
-			        	default:
-			        		"All";
-			        		break;
-			        	}
-			      ?>
-			      </td>
 			      </tr>
 			    <?php endforeach;?>
 			  </tbody>

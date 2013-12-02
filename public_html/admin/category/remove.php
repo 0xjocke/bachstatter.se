@@ -3,12 +3,12 @@
 	Authorization::checkOrRedirect();
 
 	if(isset($_POST['id'])) {
-	  	$item = PortfolioItem::find($_POST['id']);
-	  	$item->remove();
-	  	header("Location: /admin/portfolio/");
+	  	$category = Category::find($_POST['id']);
+	  	$category->remove();
+	  	header("Location: /admin/category/");
     	exit;
 	} else {
-	  $item = PortfolioItem::find($_GET['id']);
+	  $category = Category::find($_GET['id']);
 	}
  ?>
 <!doctype html>
@@ -22,12 +22,12 @@
     </head>
 	<body>
 		<div class="container">
-			<h1 class="invert">Remove <?php echo $item->title; ?></h1>
-			<a href="/admin/portfolio/" class="back">Tillbaka</a>
+			<h1 class="invert">Remove "<?php echo $category->name; ?>"</h1>
+			<a href="/admin/category/" class="back">Tillbaka</a>
 			<form class="editform" action="" method="POST">
-			  	<input type="hidden" name="id" value="<?php echo $item->id; ?>">
-				
-				<label>Är du säker du vill ta bort <strong><?php echo $item->title; ?> </strong>?</label><br>
+			  	<input type="hidden" name="id" value="<?php echo $category->id; ?>">
+				 
+				<label>Är du säker du vill ta bort <strong><?php echo $category->name; ?> </strong>?</label><br>
 			  	<input type="submit" name="submit" value="Ta bort" class="btn">
 		  	</form>
 		</div>

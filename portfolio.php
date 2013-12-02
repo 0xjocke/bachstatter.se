@@ -1,9 +1,11 @@
 <?php
 
 require_once 'application.php';
-
-$portfolioItems = PortfolioItem::all(); 
-$categories = categories::all();
+if (isset($_POST['chosenCat'])) {
+    $portfolioItems = PortfolioItem::whereCategory($_POST['chosenCat']);
+}else{
+    $portfolioItems = PortfolioItem::all();
+}
 
 ?>
 
@@ -15,6 +17,8 @@ $categories = categories::all();
     <div class="container">
     <form action="" method="post">
         <select name="chosenCat">
+            <option value="">Välj kategori</option>
+            <option disabled="disabled"></option>
             <option value="1">Wordpress</option>
             <option value="2">HTML & CSS</option>             
             <option value="3">Tictail</option>
@@ -22,9 +26,10 @@ $categories = categories::all();
         <input type="submit">
     </form>
     <br>
-   
+
     <?php 
             foreach ($portfolioItems as $index => $item):
+            
     ?>
         <?php 
             if ($index % 2): 
@@ -47,8 +52,10 @@ $categories = categories::all();
                     <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
                 </div>
             <?php endif; ?>
-       <?php endforeach;
-   
+       <?php 
+     
+       endforeach;
+        
        ?>
       
     </div>

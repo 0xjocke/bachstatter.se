@@ -20,6 +20,15 @@
 	      		$this->$key = $value;
 		    }
 	    }
+
+
+	    public static function whereCategory($categoryId) {
+		    // Exikverar mysql sträng
+		    $statement = self::$dbh->prepare("SELECT * FROM ".self::TABLE_NAME." WHERE categoryId = :categoryId");
+		    $statement->execute(array('categoryId' => $categoryId));
+		    // Returnerar array där varje object är en instans av tex PortfolioItem
+		    return $statement->fetchAll(PDO::FETCH_CLASS, "PortfolioItem");
+		}
 	    // variable for url for all port items
 	    private static $url = '/porfolio_items';
 	
