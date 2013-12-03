@@ -1,9 +1,11 @@
 <?php
 
 require_once 'application.php';
-if (isset($_POST['chosenCat'])) {
-    $portfolioItems = PortfolioItem::whereCategory($_POST['chosenCat']);
+$category = Category::all();
+if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
+    $portfolioItems = PortfolioItem::whereCategory($_GET['categoryId']);
 }else{
+    $_GET["categoryId"] = "";
     $portfolioItems = PortfolioItem::all();
 }
 
@@ -15,17 +17,24 @@ if (isset($_POST['chosenCat'])) {
         <h1>Portfolio</h1>
     </header>
     <div class="container">
-    <form action="" method="post">
-        <select name="chosenCat">
-            <option value="">Välj kategori</option>
-            <option disabled="disabled"></option>
-            <option value="1">Wordpress</option>
-            <option value="2">HTML & CSS</option>             
-            <option value="3">Tictail</option>
-        </select>
-        <input type="submit">
-    </form>
-    <br>
+        <form action="" method="get">
+          <div class="custom-select">
+            <label for="select-choice1" class="label select-1"><span class="selection-choice"> Choose a category</span> </label>
+            <select id="select-choice1" class="select" name="categoryId">
+                    <option value="">All</option>
+                <?php foreach ($category as $category): ?>
+                    <option value="<?php echo $category->id;?>" <?php if ($category->id == $_GET['categoryId']) {echo "selected";} ?>>
+                    <?php echo $category->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+          </div>
+        </form>
+        <p><?php if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
+            $category = Category::find($_GET['categoryId']);
+            echo $category->name;
+            }
+         ?>
+         </p>
 
     <?php 
             foreach ($portfolioItems as $index => $item):
@@ -59,4 +68,5 @@ if (isset($_POST['chosenCat'])) {
        ?>
       
     </div>
+    <br>
 </section>
