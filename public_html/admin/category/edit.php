@@ -29,7 +29,7 @@
 			<form class="editform" action="" method="POST">
 				<input type="hidden" name="category[id]" value="<?php echo $category->id; ?>">
 			    <label for="name">Name</label><br>
-			    <input type="text" id="name" name="category[name]" value="<?php echo $category->name; ?>"> <br><br>
+			    <input type="text" name="category[name]" value="<?php echo $category->name; ?>"> <br><br>
 
 				<input type="submit" name="submit" value="Submit">
 		  	</form>

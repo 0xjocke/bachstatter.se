@@ -28,7 +28,7 @@
 			<form class="editform" action="" method="POST">
 
 			    <label for="name">Name</label><br>
-			    <input type="text" id="name" name="category[name]" value=""> <br><br>
+			    <input type="text" name="category[name]" value=""> <br><br>
 
 				<input type="submit" name="submit" value="Submit">
 		  	</form>
