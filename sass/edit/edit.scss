@@ -1,0 +1,25 @@
+/* Edit page
+______________________*/
+
+.invert{
+	color: invert($mainbg);
+	font-size: 4em;
+	margin: 0.5em 0;
+
+
+}
+table{
+	border: 1px solid;
+}
+
+
+td, th{
+	font-size: 2em;
+	border: 1px solid;
+	padding: 1em;
+}
+
+.editform{
+	font-size: 2em;
+	margin: 0.75em 0;
+}

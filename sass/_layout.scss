@@ -17,10 +17,24 @@
 	margin-top: 1em;
 	height: 200px;
 	@include span-columns(5, 12);
+   @media (max-width: 885px) {
+         @include span-columns(8, 12);
+         @include pre(2, 12);
+   }
+   @media (max-width: 550px) {
+      @include span-columns(12, 12);
+      @include pre(0, 12);
+   }
 }
 
 .portLeft{
 	@include pre(1, 12);
+    @media (max-width: 885px) {
+         @include pre(2, 12);
+    }
+    @media (max-width:550px) {
+      @include pre(0, 12);
+    }
 }
 
 .itemcon{
