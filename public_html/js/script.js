@@ -167,6 +167,34 @@ __________Contact______________*/
           $('.timeround').css('opacity', '0');                        // .timeround opacity to 0
           $(this).siblings('.timeround').css('opacity', '0');         // 'this':s sibling with class .timeround opacity to 0
       });
+
+
+        /*
+       __________Select watcher______________*/
+
+       $(document).on('change', '.select', function() {
+        
+            console.log("changed");
+            var categoryId = $(this).val();
+            $.ajax({
+                type: 'GET',
+                url: "/portfolio.php",
+                data: {'categoryId': categoryId}
+            })
+            .done(function(html) {
+                $('#portfolio').replaceWith(html);
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+        });
+
+
+
+
 }); //End document.ready
 
 
