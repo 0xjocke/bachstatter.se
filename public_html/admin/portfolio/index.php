@@ -40,25 +40,12 @@
 			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
 			        </td>
 			        <td>
-			        <?php
-			        $categoryId = $item->categoryId;
-			        	switch ($categoryId) {
-			        	case '1':
-			        		echo "Wordpress";
-			        		break;
-			        	case '2':
-			        		echo "Html5 & CSS3";
-			        		break;
-		        		case '3':
-		        		echo "Tictail";
-		        		break;
-			        	
-			        	default:
-			        		"All";
-			        		break;
-			        	}
-			      ?>
-			      </td>
+			      		<?php if ($item->category()){echo $item->category()->name;}
+			      					else{
+			      						echo "No category";
+			      					}
+			      		 ?>
+			      	</td>
 			      </tr>
 			    <?php endforeach;?>
 			  </tbody>
