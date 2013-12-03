@@ -57,13 +57,16 @@
 		    $statement = self::$dbh->prepare(
 		      "UPDATE ".self::TABLE_NAME." SET title=:title,
 		                                       content=:content,
+		                                       categoryId=:categoryId
 		                                       WHERE id=:id");
 		    // Exekverar mysql kommando
 		    $statement->execute(array('id' => $this->id,
 		                              'title' => $this->title,
-		                              'content' => $this->content
+		                              'content' => $this->content,
+		                              'categoryId' => $this->categoryId
 		                             ));
   		}
+
   		public function remove(){
   			 // Förbereder mysql kommando
 		    $statement = self::$dbh->prepare(
@@ -112,6 +115,18 @@
 			  	}
 			  return $errorMessage;
   		}	//end add image
+
+  		private $category;
+  		
+  		public function category(){
+  			if (!isset($this->category)){
+  				$this->category = Category::find($this->categoryId);
+  			}
+  			return $this->category;
+
+  		}
+
+
 	}// class end
 
 ?>
