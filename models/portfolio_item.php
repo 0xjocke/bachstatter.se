@@ -2,25 +2,8 @@
 	class PortfolioItem extends BaseModel{
 		//name of my table
   		const TABLE_NAME = 'portfolioItems';
-
+  		// public variables represent the collumns I have in db
 	    public $id, $title, $content, $categoryId, $imageName;
-
-	    // when I call this func w an array all array items
-	    // will be added to this class variables
-  		public function __construct(array $attributes = null) {
-	    	if ($attributes === null) return;
-	    	foreach ($attributes as $key => $value) {
-	      		$this->$key = $value;
-		    }
-	    }
-
-	    public function attributes(array $attributes = null){
-	    	if ($attributes === null) return;
-	    	foreach ($attributes as $key => $value) {
-	      		$this->$key = $value;
-		    }
-	    }
-
 
 	    public static function whereCategory($categoryId) {
 		    // Exikverar mysql sträng
@@ -51,15 +34,13 @@
     		return '/admin/portfolio/remove.php?id=' . $this->id;
   		}
 
-
+  		// saves  name and ID to db
   		public function save() {
-		    // Förbereder mysql kommando
 		    $statement = self::$dbh->prepare(
 		      "UPDATE ".self::TABLE_NAME." SET title=:title,
 		                                       content=:content,
 		                                       categoryId=:categoryId
 		                                       WHERE id=:id");
-		    // Exekverar mysql kommando
 		    $statement->execute(array('id' => $this->id,
 		                              'title' => $this->title,
 		                              'content' => $this->content,
@@ -67,18 +48,11 @@
 		                             ));
   		}
 
-  		public function remove(){
-  			 // Förbereder mysql kommando
-		    $statement = self::$dbh->prepare(
-		      "DELETE FROM ".self::TABLE_NAME." WHERE id=:id");
-		    // Exekverar mysql kommando
-		    $statement->execute(array('id' => $this->id));
-  		}
-
+  		//add new item
   		public function add(){
   			 $statement = self::$dbh->prepare(
 		      "INSERT INTO ".self::TABLE_NAME." (title, content) VALUES (:title, :content)");
-		      // Exekverar mysql kommando
+		    	
 		    	$statement->execute(array('title' => $this->title, 'content' => $this->content));
 
 		    	$this->id = self::$dbh->lastInsertId();
@@ -86,38 +60,53 @@
 
 
   		// lägg till in array
-
   		public function addImage(){
+  			// create an empty array
   			$errorMessage = [];
+  			// saves allowed extensions in array
   			$allowedExts = array("gif", "jpeg", "jpg", "png");
+  			// saves allowed types in array
   			$allowedTypes = array("image/gif","image/jpeg", "image/jpg","image/pjpeg","image/x-png","image/png" );
+			// explode the filename at "."
 			$temp = explode(".", $_FILES["file"]["name"]);
+			// saves the end part (extension) in $extension
 			$extension = end($temp);
-
+			// if file is bigger than 1 byte and smaller than 2000000
+			// and if the extension is in allowedextension
+			//and if the file type is in allowtypes array
 			if (($_FILES["file"]["size"] > 1)
 			&& ($_FILES["file"]["size"] < 2000000)
 			&& in_array($extension, $allowedExts)
 			&& in_array($_FILES['file']['type'], $allowedTypes)){
+				// if  error save them in $errorMessage array
 				if ($_FILES["file"]["error"] > 0){
 					$errorMessage[] = "Return Code: " . $_FILES["file"]["error"];
 				    }
+				    // else (error = 0). use move_uploaded_file func. first parameter current place for img
+				    // 2nd parameter the folder I want it in. 
 				    else{
 						if(move_uploaded_file($_FILES["file"]["tmp_name"],
-						"../../images/" . $_FILES["file"]["name"])){
-
+						ROOT_PATH . "/public_html/images/" . $_FILES["file"]["name"])){
+							// set objects variable $imageName to the image name
+							// and load it up to DB
 							$this->imageName= $_FILES['file']['name'];
 							$statement = self::$dbh->prepare("UPDATE ".self::TABLE_NAME." SET imageName=:imageName WHERE id = :id");
 							$statement->execute(array('imageName'=> $this->imageName, 'id'=> $this->id));
 						}
 				    }
+				// this is the big if. and its saves the messages Invailed file to my error array    
 				}else{
 					$errorMessage[] = "Invalid file";
 			  	}
+			  	// returns the error array if all goes well this will be empty
 			  return $errorMessage;
   		}	//end add image
 
+  		// private variable for saving a specific category for object
   		private $category;
   		
+  		// if private var is set return the categroy else 
+  		// use our find method and send our ID as parameter.
   		public function category(){
   			if (!isset($this->category)){
   				$this->category = Category::find($this->categoryId);

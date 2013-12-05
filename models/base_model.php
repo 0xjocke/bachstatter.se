@@ -11,6 +11,23 @@ class BaseModel
   public static function setDbh($pdoDbh) {
     self::$dbh = $pdoDbh;
   }
+    // when I call this func w an array as parameter all array items
+  // will be added to this class variables
+  public function __construct(array $attributes = null) {
+    // dont do anything if we dont get an parameter.
+    if ($attributes === null) return;
+    // loop through our array set the keys and vlaues to our class variables
+    foreach ($attributes as $key => $value) {
+        $this->$key = $value;
+    }
+  }
+  // does the same as constructor func but can get called with out creating a newe object
+  public function attributes(array $attributes = null){
+    if ($attributes === null) return;
+    foreach ($attributes as $key => $value) {
+        $this->$key = $value;
+    }
+  }
 
   public static function all() {
     // Gets the name of the class its being called from
@@ -32,7 +49,8 @@ class BaseModel
   public static function find($id) {
     $class = get_called_class();
     $table = $class::TABLE_NAME;
-    // prepares, select all from table_name where id is the parameter
+    // prepares, select all from table_name where id is the parameter nnumber.
+    // in prepare I use :id to stop Ross from injections
   
     $statement = self::$dbh->prepare("SELECT * FROM $table WHERE id=:id LIMIT 1");
     // set fetch mode so we get objects
@@ -42,6 +60,15 @@ class BaseModel
     // returnes one row with objects
     return $statement->fetch(PDO::FETCH_CLASS);
   }
-}
 
+
+  // removes this object  
+      public function remove(){
+        $class = get_called_class();
+        $table = $class::TABLE_NAME;
+        $statement = self::$dbh->prepare(
+          "DELETE FROM ".$table." WHERE id=:id");
+        $statement->execute(array('id' => $this->id));
+      }
+}
 ?>
