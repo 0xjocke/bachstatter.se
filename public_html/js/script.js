@@ -193,6 +193,11 @@ __________Contact______________*/
             });
         });
 
+       //fadeout class
+        setTimeout(function() {
+          $('.fadeOut').fadeOut(500);
+        }, 3000);
+
 
 
 

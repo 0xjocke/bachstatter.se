@@ -1,3 +1,16 @@
+<?php 
+    require_once '../application.php';
+    $result = 0;
+
+    if (isset($_POST['email'])) {
+        $email = new Email;
+            if($email->validate($_POST['email'])){
+                $result = $email->send();
+            }
+        }
+
+ ?>
+
 <div class="contactpic"></div>
 
 <section id="contact">
@@ -41,25 +54,19 @@
         </div>
         <div class="emailcon">
           <div id="form-div">
-            <form method="post" action="mail.php" class="form" id="form1">
+            <form method="post" action="" class="form" id="form1">
               
-              <p class="name">
-                <input name="name" type="text" class="feedback-input" placeholder="Name" id="name" required />
-              </p>
+                <label for="name">Namn</label>
+                <input type="text" name="email[name]" id="name" class="feedback-input" placeholder="Namn" required><br>
               
-              <p class="email">
-                <input name="email" type="email" class="feedback-input" id="email" placeholder="Email" required/>
-              </p>
+                <label for="email">Email</label>
+                <input type="email" name="email[email_adress]" id="email" class="feedback-input" placeholder="Email" required><br>
               
-              <p class="text">
-                <textarea name="text" class="feedback-input" id="comment" placeholder="What's on your mind?" required></textarea>
-              </p>
-              
-              
-              <div class="submit">
-                <input name="submit" type="submit" value="SEND" id="button-blue"/>
-                <div class="ease"></div>
-              </div>
+                <label for="comment">Meddelande</label>
+                <textarea name="email[message]" id="comment" cols="30" rows="10" class="feedback-input" placeholder="Meddelande" required></textarea><br>
+            
+                <input class="btn" type="submit" id="submit">
+                <input id="reset" class="btn" type="reset" name="reset">
             </form>
        
           </div>

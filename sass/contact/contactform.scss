@@ -37,7 +37,7 @@
 
 #form-div {
 	background:rgba(0,0,0,0.5);
-	padding: 35px 35px 50px 35px;
+	padding: 20px 35px 50px 35px;
 	width: 450px;
 }
 
@@ -95,25 +95,42 @@ textarea {
 }
 
 
-#button-blue{
-	font-family: 'Montserrat', Helvetica, Arial,  sans-serif;
-	float:left;
-	width: 100%;
-	border: #fbfbfb solid 4px;
-	cursor:pointer;
-	background-color: invert($mainbg);
-	color:white;
-	font-size:24px;
-	padding:22px 0;
-	@include transition(all 0.3s);
+.success, .error{
+	margin: 2em auto;
+	text-align: center;
+	width:50%;
+	padding: 1em;
+	border-radius: 10px;
+}
+.success{
+	color: lightgreen;
+	background: darkgreen;
+}
+.error{
+	color: lighten(red, 35%);
+	background: darken(red, 15%);
 }
 
-#button-blue:hover{
-	background-color: rgba(0,0,0,0);
-	color: #0493bd;
+.btn{
+	border-radius: 5px;
+	background:$mainbg;
+	padding: 0.3em 1em 0.45em 1em;
+	font-size: 1.5em;
+	color: black;
+	@include box-shadow(inset 0 -4px 0 darken($mainbg, 20%));
+	border: none;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-weight: 200;
+	&:hover{ 
+		cursor: pointer;
+	}
+	&:active{
+		@include box-shadow(none);
+		position: relative;
+		top: 4px;
+		height: 43px;
+		border:none;
+		outline: none;
+	}
 }
 
-.ease {
-	width: 0px;
-	height: 76px;
-}
