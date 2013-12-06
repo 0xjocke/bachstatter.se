@@ -1,6 +1,9 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
+	// get all category
+	$category = Category::all();
+
 	// set my error array so I dont get undefined msg
 	$errorMessages = [];
 	// if post isset create new instance.
@@ -35,6 +38,16 @@
 
 				<label for="content">Content</label>
 				<textarea id="content" name="item[content]"></textarea> <br><br>
+
+				<label for="Category">Category</label>
+				<select id="Category" name="item[categoryId]">
+					<option value="">Ingen Kategori</option>
+					<?php foreach ($category as $category): ?>
+						<option value="<?php echo $category->id ?>"> 
+							<?php echo $category->name; ?>
+						</option>
+					<?php endforeach; ?>
+				</select> <br><br
 
 			  	<label for="file">Choose you image (388px*200px)</label><br>
 				<input type="file" name="file" id="file" size="40"><br>

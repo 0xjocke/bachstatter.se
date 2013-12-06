@@ -51,9 +51,9 @@
   		//add new item
   		public function add(){
   			 $statement = self::$dbh->prepare(
-		      "INSERT INTO ".self::TABLE_NAME." (title, content) VALUES (:title, :content)");
+		      "INSERT INTO ".self::TABLE_NAME." (title, content, categoryId) VALUES (:title, :content, :categoryId)");
 		    	
-		    	$statement->execute(array('title' => $this->title, 'content' => $this->content));
+		    	$statement->execute(array('title' => $this->title, 'content' => $this->content, 'categoryId' => $this->categoryId));
 
 		    	$this->id = self::$dbh->lastInsertId();
   		}
