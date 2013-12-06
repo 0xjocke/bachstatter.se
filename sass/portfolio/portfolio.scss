@@ -27,7 +27,9 @@ ______________________*/
 	.readmore{
 		font-size: 1.5em;
 		margin-left: 1em;
-
+	}
+	.marginLeft{
+		@include pre(1, 12);
 	}
 }
 
