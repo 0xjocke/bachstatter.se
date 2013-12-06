@@ -65,8 +65,8 @@
                 <label for="comment">Meddelande</label>
                 <textarea name="email[message]" id="comment" cols="30" rows="10" class="feedback-input" placeholder="Meddelande" required></textarea><br>
             
-                <input class="btn" type="submit" id="submit">
-                <input id="reset" class="btn" type="reset" name="reset">
+                <input class="btn1" type="submit" id="submit">
+                <input id="reset" class="btn1" type="reset" name="reset">
             </form>
        
           </div>
