@@ -2,39 +2,41 @@
 require_once '../../application.php';
 
 
-// definerar login
-$login = '';
+// define userName
+$errorMessage = '';
 
-if (isset($_POST['login']) && isset($_POST['password'])) {
-  // skriver över login med postat användarnamn
-  $login = $_POST['login'];
-  if (!Authorization::authenticate($_POST['login'], $_POST['password'])) {
-    $errorMessage = "Fel användarnamn eller lösenord!";
-  } else {
-    header('Location: /admin/');
-    exit;
-  }
+//if POST userName and password is set
+if (isset($_POST['userName']) && isset($_POST['password'])) {
+	// save username in userName variable
+	$userName = $_POST['userName'];
+	// if note check with db ok echo wrong
+	// else send to index
+	if (!Authorization::authenticate($_POST['userName'], $_POST['password'])) {
+		$errorMessage = "Wrong password or username!";
+	} else {
+		header('Location: /admin/');
+		exit;
+	}
 } else if (isset($_POST['submit'])){
-  $errorMessage = "Var god fyll i alla fält";
+  	// if not all is set. This will not get triggred often thanks to html5 validation
+  	$errorMessage = "Please fill out all fields";
 }
 ?>
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+<?php require ROOT_PATH . '/partials/header.php'; ?>
    <body>
-      <div class="container">
-         <form action="<?php echo $_SERVER['PHP_SELF']; ?>?p=login" method="post" class="form">
-            <h1 class="invert">Login</h1>
-            <input placeholder="Username" type="text" name="login" id="user" class="feedback-input"><br>
-            <input placeholder="Password" type="password" name="password" id="keypass" class="feedback-input"><br>
-            <input type="submit" id="submit" value="Login" />
-         </form>
-      </div>
+	  <div class="container">
+		 <form action="" method="post" class="form">
+			<h1 class="invert">Username</h1>
+			<?php 
+			// if errormsg not "" echo it
+				if ($errorMessage != '') {
+					echo $errorMessage;
+			} ?>
+			<!-- Html 5 validations -->
+			<input placeholder="Username" type="text" name="userName" id="user" class="feedback-input" required><br>
+			<input placeholder="Password" type="password" name="password" id="keypass" class="feedback-input" required><br>
+			<input type="submit" id="submit" value="Login" />
+		 </form>
+	  </div>
    </body>
 </html>

@@ -1,24 +1,22 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
+	// get all categories
 	$category = Category::all();
+  	// get the portfolio item with the ID same as get id. 
   	$item = PortfolioItem::find($_GET['id']);
-
-	if(isset($_POST['item'])) {
+  	// if item is set 
+  	// use attributes method which do the same as construct
+  	// use save method which saves tilte, content and category id
+  	// use add image which save imageName to db and moves uploaded file to right folder.
+	if(isset($_POST['item'])) {	
 	  $item->attributes($_POST['item']);
 	  $item->save();
 	  $item->addImage();
 	}
  ?>
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+	<?php require ROOT_PATH . '/partials/header.php'; ?>
+
 	<body>
 		<div class="container">
 			<h1 class="invert">Edit: <?php echo $item->title; ?></h1>

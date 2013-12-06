@@ -17,7 +17,7 @@
 
   		// saves  name and ID to db
   		public function save() {
-		    // prepare mysql string
+		    // Update column name where id is this obj id
 		    $statement = self::$dbh->prepare(
 		      "UPDATE ".self::TABLE_NAME." SET name=:name
 		                                   WHERE id=:id");
@@ -28,6 +28,7 @@
   		}
   		// add new object to db
   		public function add(){
+  				//insert name to category table. Id will auto increment
   			 $statement = self::$dbh->prepare(
 		      "INSERT INTO ".self::TABLE_NAME." (name) VALUES (:name)");
 		      // Exekverar mysql kommando

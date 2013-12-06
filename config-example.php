@@ -13,9 +13,4 @@ define('DB_NAME', 'dbname');
 define('DB_USER', 'dbuser');
 define('DB_PASS', 'dbpwd');
 
-
- // Login for admin page configurations
-$username = "user";
-$password = "pwd";
-$nonsense = "supercalifragilistohoihohpialidocious";
  ?>

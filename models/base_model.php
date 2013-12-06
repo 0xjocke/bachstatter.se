@@ -34,14 +34,14 @@ class BaseModel
     $class = get_called_class();
     // Get the constant table_name
     $table = $class::TABLE_NAME;
-    // Prepares a mysql connection
+    // Prepares a mysql connection, select all from the table name of the calss it being called from.
     $statement = self::$dbh->prepare("SELECT * FROM $table");
     // execute it
     $statement->execute();
 
 
     //returns an array containing all of the rows.
-    // every collumn becomes an object?
+    // Each row is an object and the columns properties of the object
     return $statement->fetchAll(PDO::FETCH_CLASS, $class);
   }
 
@@ -49,7 +49,7 @@ class BaseModel
   public static function find($id) {
     $class = get_called_class();
     $table = $class::TABLE_NAME;
-    // prepares, select all from table_name where id is the parameter nnumber.
+    // prepares, select the from table_name where id is the parameter nnumber.
     // in prepare I use :id to stop Ross from injections
   
     $statement = self::$dbh->prepare("SELECT * FROM $table WHERE id=:id LIMIT 1");

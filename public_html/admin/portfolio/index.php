@@ -3,15 +3,7 @@
 	Authorization::checkOrRedirect();
 	$portfolioItems = PortfolioItem::all();
  ?>
- <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+	<?php require ROOT_PATH . '/partials/header.php'; ?>
 	<body>
 		<div class="container">
 			<h1 class="invert">Portfolio items</h1>
@@ -40,10 +32,13 @@
 			        	<a href="<?php echo $item->adminRemoveUrl(); ?>">Remove</a>
 			        </td>
 			        <td>
-			      		<?php if ($item->category()){echo $item->category()->name;}
-			      					else{
-			      						echo "No category";
-			      					}
+			      		<?php 
+			      		// if we have a categoru write it out 
+			      		if ($item->category()){echo $item->category()->name;}
+			      		// else echo no cat
+			      		else{
+			      			echo "No category";
+			      		}
 			      		 ?>
 			      	</td>
 			      </tr>

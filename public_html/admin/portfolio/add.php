@@ -1,11 +1,19 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
+	// set my error array so I dont get undefined msg
 	$errorMessages = [];
+	// if post isset create new instance.
 	if(isset($_POST['item'])) {
 	  	$item = new PortfolioItem($_POST['item']);
-	  	$item->add();	 
-	  	$errorMessages = $item->addImage();
+	  	$item->add();
+	  	//if $_FILES is bigger than 1 byte set error array to addImage method
+	  	// add image will return errormsg or just validate and move the file	 
+	  	if ($_FILES["file"]["size"] > 1) {
+	  		$errorMessages = $item->addImage();
+	  	}
+
+	  	// theres no errors redirect to index and exit.
 	  	if (!count($errorMessages) > 0 ) {
 	  		header('Location: /admin/portfolio/');
   			exit;
@@ -13,15 +21,8 @@
 	}
 ?>
 
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+	<?php require ROOT_PATH . '/partials/header.php'; ?>
+
 	<body>
 		<div class="container">
 			<h1 class="invert">Add new Portfolioitem</h1>

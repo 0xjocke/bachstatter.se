@@ -173,14 +173,15 @@ __________Contact______________*/
        __________Select watcher______________*/
 
        $(document).on('change', '.select', function() {
-        
-            console.log("changed");
+            // save chosen val to var categoryId
             var categoryId = $(this).val();
+            // send the url plus category id with get
             $.ajax({
                 type: 'GET',
                 url: "/portfolio.php",
                 data: {'categoryId': categoryId}
             })
+            // when done, replace portfolio section with the 
             .done(function(html) {
                 $('#portfolio').replaceWith(html);
             })

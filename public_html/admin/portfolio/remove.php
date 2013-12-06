@@ -1,25 +1,20 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
-
+	// I dont create a new object
+	//I use my find method to find the specific obj
+	// and then delete it.
 	if(isset($_POST['id'])) {
 	  	$item = PortfolioItem::find($_POST['id']);
 	  	$item->remove();
 	  	header("Location: /admin/portfolio/");
     	exit;
 	} else {
+		// use the find method from the GET
 	  $item = PortfolioItem::find($_GET['id']);
 	}
  ?>
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+	<?php require ROOT_PATH . '/partials/header.php'; ?>
 	<body>
 		<div class="container">
 			<h1 class="invert">Remove <?php echo $item->title; ?></h1>

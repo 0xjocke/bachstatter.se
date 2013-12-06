@@ -1,6 +1,7 @@
 <?php 
 	require_once '../../../application.php';
 	Authorization::checkOrRedirect();
+	// if category is set
 	if(isset($_POST['category'])) {
 	  	$category = new Category($_POST['category']);
 	  	$category->save();	 
@@ -13,15 +14,7 @@
 	}
 ?>
 
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Frontend Utvecklare som jobbar med HTML5, CSS3, Sass och jQuery och PHP efter dina önskemål">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frontend Developer</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
+	<?php require ROOT_PATH . '/partials/header.php'; ?>
 	<body>
 		<div class="container">
 			<h1 class="invert">Edit "<?php echo $category->name; ?>"</h1>
