@@ -18,7 +18,7 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Remove <?php echo $item->title; ?></h1>
-			<a href="/admin/portfolio/" class="back">Tillbaka</a>
+			<a href="/admin/portfolio/" class="back">Back</a>
 			<form class="editform" action="" method="POST">
 			  	<input type="hidden" name="id" value="<?php echo $item->id; ?>">
 				

@@ -29,7 +29,7 @@
 	<body>
 		<div class="container">
 			<h1 class="invert">Add new Portfolioitem</h1>
-			<a href="/admin/portfolio/" class="back">Tillbaka</a>
+			<a href="/admin/portfolio/" class="back">Back</a>
 			<?php echo join($errorMessages, "<br>") ?>
 			<form class="editform" action="" method="POST" enctype="multipart/form-data">
 
