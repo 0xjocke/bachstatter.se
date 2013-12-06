@@ -1,1 +1,1 @@
-<?php require '../portfolio.php'; ?>
+<?php require '../partials/portfolio.php'; ?>
