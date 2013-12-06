@@ -1,8 +1,8 @@
 <section id="home">
     <header class="intro">
          <?php if(isset($_POST['email'])): ?>
-            // I have the $result var cause contact.php is required before home.php
-            <?php if ($result >= 1): ?>
+<!--             I have the $result var cause contact.php is required before home.php-->     
+        <?php if ($result >= 1): ?>
                 <p class="success fadeOut">Tack för ditt mail, jag återkommer så snart som möjligt.</p>
             <?php else: ?>
                 <p class="error fadeOut">Det gick tyvärr inte att skicka mailet, var god försök igen.</p>
