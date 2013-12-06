@@ -1,7 +1,12 @@
 <?php
 
 require_once 'application.php';
+
+//get all categories
 $category = Category::all();
+
+//if categoryId is set in GET and its not empty 
+// use whereCategory to fins all portfolioitems with specific ID
 if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
     $portfolioItems = PortfolioItem::whereCategory($_GET['categoryId']);
 }else{
@@ -29,12 +34,12 @@ if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
             </select>
           </div>
         </form>
-        <p><?php if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
+        <h2 class="marginLeft"><?php if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
             $category = Category::find($_GET['categoryId']);
             echo $category->name;
             }
          ?>
-         </p>
+         </h2>
 
     <?php 
             foreach ($portfolioItems as $index => $item):
