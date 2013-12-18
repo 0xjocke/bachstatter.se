@@ -20,9 +20,9 @@ $item = PortfolioItem::find($_GET['id']);
 				<h1><?php echo $item->title; ?></h1>
 				<p><?php echo $item->content; ?></p>
 			</div>
-			<div class="itembox">
-				<img src="../images/<?php echo $item->imageName; ?>" alt="">
-			</div>
+	
+				<img class="center" src="../images/<?php echo $item->imageName; ?>" alt="">
+			
 			<a class="back" href="/">Back</a>
 		</div>
 	</body>
