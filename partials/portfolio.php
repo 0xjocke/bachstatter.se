@@ -22,7 +22,7 @@ if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
         <h1>Portfolio</h1>
     </header>
     <div class="container">
-        <form action="" method="get">
+        <form method="get">
           <div class="custom-select">
             <label for="select-choice1" class="label select-1"><span class="selection-choice"> Choose a category</span> </label>
             <select id="select-choice1" class="select" name="categoryId">
@@ -50,7 +50,7 @@ if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
         ?>
                     <div class="smallbox portLeft">
                         <h2><?php echo $item->title; ?></h2>
-                        <p><?php echo $item->content; ?></p>
+                        <p><?php echo substr($item->content, 0, 60)."..."; ?></p>
                         <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
                     </div>
                     <div class="smallbox">
@@ -62,7 +62,7 @@ if (isset($_GET['categoryId']) && $_GET['categoryId'] != "") {
                 </div>
                 <div class="smallbox">
                     <h2><?php echo $item->title; ?></h2>
-                    <p><?php echo $item->content; ?></p>
+                    <p><?php echo substr($item->content, 0, 60)."..."; ?></p>
                     <a class="readmore" href="<?php echo $item->url() ?>">Läs mer</a>
                 </div>
             <?php endif; ?>
