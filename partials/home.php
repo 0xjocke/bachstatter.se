@@ -12,7 +12,7 @@
          <h2>- Frontend Developer</h2>
 
         <div class="white">
-                <img src="images/logos.png">
+                <img src="images/logos.png" alt="logos">
         </div>
     </header>
 </section>

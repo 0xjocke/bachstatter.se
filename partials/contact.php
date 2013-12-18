@@ -54,7 +54,7 @@
         </div>
         <div class="emailcon">
           <div id="form-div">
-            <form method="post" action="" class="form" id="form1">
+            <form method="post" class="form" id="form1">
               
                 <label for="name">Namn</label>
                 <input type="text" name="email[name]" id="name" class="feedback-input" placeholder="Namn" required><br>
@@ -68,7 +68,7 @@
                 <input class="btn1" type="submit" id="submit">
                 <input id="reset" class="btn1" type="reset" name="reset">
             </form>
-       
           </div>
+        </div>
     </div> <!--End cwrapper-->
 </section>

@@ -6,12 +6,12 @@
                     <div class="timeline">
                         <div class="timemobile">
                             <ul>
-                                <li><time>2008:</time><p> Student från Procivitas.</p></li>
-                                <li><time>2009:</time> <p>Pingis på heltid.</p></li>
-                                <li><time>2010:</time> <p>Pingisproffs i Elitserien.</p></li>
-                                <li><time>2011:</time> <p>Nationalekonomi 30hp. <br> Kombinerat med pingis.</p></li>
-                                <li><time>2012:</time> <p>Lansering thisstyle.se.<br> SM-Guld. <br> Redovisning 10hp.</p></li>
-                                <li><time>2013:</time> <p>Konsultuppdrag.<br> Webbdesign 15hp.<br> Nätapp 400yh.</p> </li>
+                                <li><time>2008</time><p> Student från Procivitas.</p></li>
+                                <li><time>2009</time> <p>Pingis på heltid.</p></li>
+                                <li><time>2010</time> <p>Pingisproffs i Elitserien.</p></li>
+                                <li><time>2011</time> <p>Nationalekonomi 30hp. <br> Kombinerat med pingis.</p></li>
+                                <li><time>2012</time> <p>Lansering thisstyle.se.<br> SM-Guld. <br> Redovisning 10hp.</p></li>
+                                <li><time>2013</time> <p>Konsultuppdrag.<br> Webbdesign 15hp.<br> Nätapp 400yh.</p> </li>
                             </ul>
                         </div>
                         <div class="timetop">
