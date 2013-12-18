@@ -102,7 +102,14 @@ __________________________*/
 
 .itemcon {
   margin: 0 auto;
-  width: 40%; }
+  width: 600px; }
+  @media (max-width: 600px) {
+    .itemcon {
+      width: 100%; } }
+
+.center {
+  width: 100%;
+  margin-bottom: 1em; }
 
 /* Global
 ______________________*/
